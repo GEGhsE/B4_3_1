@@ -5379,7 +5379,7 @@
         const uid = String(payload.user_id || payload.userId || '').trim();
         const pw = String(payload.password || '').trim();
         if (!uid) return { ok: false, error: '학생을 선택해 주세요.' };
-        if (pw !== '1111') return { ok: false, error: '비밀번호가 달라요. (체험 모드는 1111)' };
+        if (pw !== '1234') return { ok: false, error: '비밀번호가 달라요. (체험 모드는 1234)' };
         const num = (uid.match(/-(\d+)$/) || [])[1] || '';
         return { ok: true, userId: uid, name: num ? '학생' + num : uid };
       }
@@ -7499,8 +7499,7 @@
     $('#saveP').onclick = async () => {
       const ans = ($('#answerInput').value || '').trim();
       if (!ans) {
-        toast('배
-려하는 말을 적어볼까요? ✍️');
+        toast('배려하는 말을 적어볼까요? ✍️');
         return;
       }
       if (!isMeaningful(ans)) {
@@ -9524,7 +9523,7 @@
     if (state.mode === 'demo') {
       const note = document.createElement('div');
       note.className = 'demo-note';
-      note.innerHTML = '🌱 체험 모드예요. 비밀번호는 <strong>1111</strong>입니다.<br/>기록은 이 기기에만 저장돼요.';
+      note.innerHTML = '🌱 체험 모드예요. 비밀번호는 <strong>1234</strong>입니다.<br/>기록은 이 기기에만 저장돼요.';
       const form = document.querySelector('#loginModal .login-form');
       if (form && form.parentNode) form.parentNode.insertBefore(note, form);
     }
